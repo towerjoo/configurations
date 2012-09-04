@@ -1,0 +1,38 @@
+" Vim Configuration file, mostly for Python
+" thanks http://www.162cm.com/archives/906.html
+
+syntax on   "enable syntax
+set number  "set line number
+set autoindent      "auto indent
+set smartindent      " smart indent
+set incsearch      " incremental search
+set shiftwidth=4    " shiftwidth
+set tabstop=4    " tabstop
+set softtabstop=4
+set fileencodings=utf-8,gb2312,cp936,gbk    "fileencodings for read, to guess from
+set fileencoding=utf-8   "default file encoding for saving
+set expandtab   " use blank instead of tab
+set nocompatible
+set nobackup
+set ruler
+set hls
+filetype plugin indent on
+set smarttab
+set showmatch
+retab   "replace tab to blanks if the opened file has tabs
+set paste
+
+if has("autocmd")
+    " " In text files, always limit the width of text to 78 characters
+    autocmd BufRead *.txt set tw=78
+    " " When editing a file, always jump to the last cursor position
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \ exe "normal g'\"" |
+    \  endif
+    endif
+
+    au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
+" for Calendar plugin
+let g:calendar_monday=1
