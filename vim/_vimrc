@@ -1,5 +1,6 @@
 " Vim Configuration file, mostly for Python
 " thanks http://www.162cm.com/archives/906.html
+" wget https://raw.github.com/towerjoo/configurations/master/vim/_vimrc
 
 syntax on   "enable syntax
 set number  "set line number

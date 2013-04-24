@@ -1,0 +1,3 @@
+gnome-do
+git
+vim
